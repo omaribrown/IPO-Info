@@ -42,7 +42,8 @@ func findIPO(ticker string) string {
 			ipoDay := record[6]
 			ipoMonth := record[7]
 			ipoYear := record[5]
-			ipoDate := ipoDay + "/" + ipoMonth + "/" + ipoYear
+			ipoPrice := record[11]
+			ipoDate := ipoDay + "/" + ipoMonth + "/" + ipoYear + " at $" + ipoPrice
 			result := ipoDate
 
 			// Return the result

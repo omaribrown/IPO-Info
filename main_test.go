@@ -15,6 +15,6 @@ func TestFindIpo(t *testing.T) {
 		testResult := findIPO(testStock)
 
 		// Test against expected result
-		assert.Equal(t, "11/18/1999", testResult)
+		assert.Equal(t, "11/18/1999 at $27.3725", testResult)
 	})
 }
