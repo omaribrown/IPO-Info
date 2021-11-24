@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func findIPO() {
+func findIPO(ticker string) {
 
 	// Open the file
 	csvfile, err := os.Open("IPODataFull.csv")
@@ -19,11 +19,6 @@ func findIPO() {
 
 	// Parse the file
 	r := csv.NewReader(csvfile)
-
-	// Collect user input for ticker
-	var ticker string
-	fmt.Println("Enter a Stock Symbol:")
-	fmt.Scanln(&ticker)
 
 	// Iterate through the records
 	for {
@@ -47,5 +42,8 @@ func findIPO() {
 }
 
 func main() {
-	findIPO()
+	var stock string
+	fmt.Println("Enter a Stock Symbol: ")
+	fmt.Scanln(&stock)
+	findIPO(stock)
 }
