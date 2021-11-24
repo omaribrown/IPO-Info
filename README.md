@@ -1,14 +1,12 @@
 Quick Start:
 run: "go run ." in terminal
 enter a known Stock Symbol
-Expected output: "Stock [symbol] IPO'd on [IPO Month] [IPO Day] [IPO Year] at $[Opening Price]
+Expected output: "day/month/year at $Day0 Price" of IPO
 
 Notes: 
 This folder contains a data set from https://www.kaggle.com/proselotis/financial-ipo-data
 
 Remaining work:
-Test file
-Return 'not found' if symbol inputted doesn't match any symbol in csv
+- Implement API to call https://www.yahoofinanceapi.com/ for more accurate data
 
-Feedback [EBAN]:
-leave comments here...
+- Add UI and additional functionality 
