@@ -8,13 +8,13 @@ import (
 
 func TestFindIpo(t *testing.T) {
 	t.Run("Should find IPO Data", func(t *testing.T) {
-		// arrange
+		// Enter a Stock symbol
 		testStock := "a"
 
-		// act
+		// Assign the function output to a variable
 		testResult := findIPO(testStock)
 
-		// assert
-		assert.Equal(t, "Stock: A IPO'd on 11 18 1999 at $ 30.6572", testResult)
+		// Test against expected result
+		assert.Equal(t, "11/18/1999", testResult)
 	})
 }

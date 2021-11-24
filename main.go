@@ -9,7 +9,10 @@ import (
 	"strings"
 )
 
-func findIPO(ticker string) {
+func findIPO(ticker string) string {
+
+	// Declare a variable to store negative value
+	result := "Nothing Found."
 
 	// Open the file
 	csvfile, err := os.Open("IPODataFull.csv")
@@ -32,18 +35,28 @@ func findIPO(ticker string) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		// return stock data matching ticker
 		// Using ToUpper to capitalize user input
 		if record[0] == strings.ToUpper(ticker) {
-			fmt.Println("Stock:", record[0], "IPO'd on", record[6], record[7], record[5], "at $", record[12])
-			break
+
+			// Assign returned date values to a string
+			ipoDay := record[6]
+			ipoMonth := record[7]
+			ipoYear := record[5]
+			ipoDate := ipoDay + "/" + ipoMonth + "/" + ipoYear
+			result := ipoDate
+
+			// Return the result
+			fmt.Println(result)
+			return result
 		}
 	}
+	return result
 }
 
 func main() {
 	var stock string
 	fmt.Println("Enter a Stock Symbol: ")
 	fmt.Scanln(&stock)
+	// Run function passing any stock symbol
 	findIPO(stock)
 }
